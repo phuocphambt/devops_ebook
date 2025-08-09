@@ -65,3 +65,16 @@ Kiểm tra & reload:
 ``` bash
 sudo sshd -t && sudo systemctl reload sshd
 ```
+## Ví dụ:
+Cài fail2ban với jail mặc định cho SSH:
+``` bash
+sudo apt install -y fail2ban
+sudo systemctl enable --now fail2ban
+sudo fail2ban-client status sshd
+```
+Bật cập nhật tự động (unattended-upgrades)
+``` bash
+sudo apt install -y unattended-upgrades
+sudo dpkg-reconfigure --priority=low unattended-upgrades
+```
+** Mặc định mỗi ngày 2 lần (6h và 18h) với delay 60 phút hệ thống sẽ tự động cập nhật
